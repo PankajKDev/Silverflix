@@ -1,5 +1,6 @@
 import Input from "@/components/Input";
 import { useCallback, useState } from "react";
+import axios from "axios";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,18 @@ const Auth = () => {
       currentvariant === "login" ? "register" : "login"
     );
   }, []);
+  const register = useCallback(async () => {
+    try {
+      await axios.post("/api/register", {
+        //sending post request at /api/register with {email,name,password}
+        email,
+        name,
+        password,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, [email, name, password]); //putting email,name and password in dependecy array
   return (
     <div
       className="
@@ -58,7 +71,10 @@ const Auth = () => {
                 value={password}
               />
             </div>
-            <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition-none">
+            <button
+              onClick={register}
+              className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition-none"
+            >
               {variant === "login" ? "Login" : "Sign up"}
             </button>
             <p className="text-neutral-500 mt-12">
