@@ -34,7 +34,6 @@ export default async function handler( //defining a handler which will take two 
     });
     return res.status(200).json(user); //return user with OK status code 200
   } catch (error) {
-    console.log(error);
-    return res.status(400).end(); //any error occurs log error to console with status 400
+    return res.status(400).json({ error: `Something went wrong: ${error}` }); //any error occurs log error to console with status 400
   }
 }
