@@ -49,7 +49,7 @@ const Auth = () => {
     >
       <div className="bg-black  w-full h-full lg:bg-opacity-50">
         <nav className="px-12 py-5">
-          <img src="/Images/Logo.png" className="h-20 md:h-24" alt="" />
+          <img src="/Images/Logo.png" className="h-12 " alt="" />
         </nav>
         <div className="flex justify-center">
           <div className="bg-black bg-opacity-90 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">

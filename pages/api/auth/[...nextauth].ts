@@ -7,7 +7,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 export default NextAuth({
   providers: [
-    //an array of authentication providers here it is a single array named Credentials
+    //an array of authentication providers Google,Github and credentials
     GithubProvider({
       clientId: process.env.GITHUB_ID || "", //register the oAuth application at github too
       clientSecret: process.env.GITHUB_SECRET || "",
