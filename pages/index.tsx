@@ -1,3 +1,4 @@
+import Billboard from "@/components/Billboard";
 import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next"; //this object will be passed to the function
@@ -24,6 +25,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <Billboard />
     </>
   );
 }
