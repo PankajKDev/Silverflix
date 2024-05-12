@@ -9,7 +9,7 @@ export default async function handler(
     return res.status(405).end();
   }
   try {
-    await serverAuth(req); //checks if user is authenticated
+    await serverAuth(req, res); //checks if user is authenticated
     const moviesCount = await prismadb.movie.count(); //checks number of movies
     const randomIndex = Math.floor(Math.random() * moviesCount); //obvious duh
     const randomMovies = await prismadb.movie.findMany({

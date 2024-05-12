@@ -2,16 +2,19 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { without } from "lodash";
 import prismadb from "@/lib/prismadb";
 import serverAuth from "@/lib/serverAuth";
-export async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
-    if (req.method == "POST") {
+    if (req.method === "POST") {
       //request method is POST
-      const { currentUser } = await serverAuth(req); //authenticates user with serverAuthh
-      const { movieID } = req.body; //retrivies movieID from request body
+      const { currentUser } = await serverAuth(req, res); //authenticates user with serverAuthh
+      const { movieId } = req.body; //retrivies movieID from request body
       const existingMovie = await prismadb.movie.findUnique({
         //check if movie exists in dataBase
         where: {
-          id: movieID,
+          id: movieId,
         },
       });
       if (!existingMovie) {
@@ -25,14 +28,15 @@ export async function handler(req: NextApiRequest, res: NextApiResponse) {
         },
         data: {
           favouriteIds: {
-            push: movieID,
+            push: movieId,
           },
         },
       });
+      return res.status(200).json(user);
     }
-    if (req.method == "DELETE") {
+    if (req.method === "DELETE") {
       //request method is DELETE
-      const { currentUser } = await serverAuth(req); //authenticates user
+      const { currentUser } = await serverAuth(req, res); //authenticates user
       const { movieId } = req.body; //retrives movideId from req.body
       const existingMovie = await prismadb.movie.findUnique({
         //check if movie exists

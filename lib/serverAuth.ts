@@ -1,10 +1,11 @@
 import prismadb from "@/lib/prismadb";
-import { NextApiRequest } from "next"; //typescript type that represents incoming request object
-import { getSession } from "next-auth/react"; //to retrieve current user session
-const serverAuth = async (req: NextApiRequest) => {
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { NextApiRequest, NextApiResponse } from "next"; //typescript type that represents incoming request object
+import { getServerSession } from "next-auth"; //to retrieve current user session
+const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
   //takes NextAPIRequest object as an arguement which
   //represents the incoming request from API route
-  const session = await getSession({ req }); //retrieves current session
+  const session = await getServerSession(req, res, authOptions); //retrieves current session
   if (!session?.user?.email) {
     //if there is no email assosciated throws error
     throw "not signed in";

@@ -5,7 +5,9 @@ import Credentials from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-export default NextAuth({
+import { AuthOptions } from "next-auth";
+
+export const authOptions: AuthOptions = {
   providers: [
     //an array of authentication providers Google,Github and credentials
     GithubProvider({
@@ -68,4 +70,6 @@ export default NextAuth({
     secret: process.env.NEXTAUTH_JWT_SECRET,
   },
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+export default NextAuth(authOptions);
