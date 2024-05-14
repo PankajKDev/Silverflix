@@ -6,6 +6,7 @@ interface MovieListProps {
   data: Record<string, any>[];
   title: string;
 }
+
 const MovieList: React.FC<MovieListProps> = ({ data, title }) => {
   if (isEmpty(data)) {
     //so i dont render an empty div
