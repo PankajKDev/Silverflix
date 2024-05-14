@@ -7,6 +7,7 @@ import { NextPageContext } from "next"; //this object will be passed to the func
 import { getSession } from "next-auth/react";
 import InfoModal from "@/components/InfoModal";
 import userInfoModal from "@/hooks/useInfoModal";
+import Head from "next/head";
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context); //checks for session with getSession
   if (!session) {
@@ -29,6 +30,11 @@ export default function Home() {
   const { isOpen, closeModal } = userInfoModal();
   return (
     <>
+      <Head>
+        <title>Silverflix&#xb7;Home</title>
+        <meta name="description" content="Silverflix Homepage" />
+        <link rel="icon" href="/Images/Favicon.jpeg" />
+      </Head>
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />
