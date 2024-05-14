@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import PlayButton from "./PlayButton";
 import FavouriteButton from "./FavouriteButton";
@@ -8,7 +8,7 @@ interface InfoModalProps {
   visible?: boolean;
   onClose: any;
 }
-const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
+const InfoModal: FC<InfoModalProps> = ({ visible, onClose }) => {
   const [isVisible, setIsVisible] = useState(!!visible);
   const { movieId } = userInfoModal();
   const { data = {} } = useMovie(movieId);

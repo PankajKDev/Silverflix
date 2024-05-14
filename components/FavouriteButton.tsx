@@ -1,12 +1,12 @@
 import axios from "axios";
 import { BsFillStarFill, BsStar } from "react-icons/bs";
-import React, { useCallback, useMemo } from "react";
+import { FC, useCallback, useMemo } from "react";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useFavourites from "@/hooks/useFavourites";
 interface FavouriteButtonProps {
   movieId: string;
 }
-const FavouriteButton: React.FC<FavouriteButtonProps> = ({ movieId }) => {
+const FavouriteButton: FC<FavouriteButtonProps> = ({ movieId }) => {
   const { mutate: mutateFavourites } = useFavourites();
   const { data: currentUser, mutate } = useCurrentUser();
 

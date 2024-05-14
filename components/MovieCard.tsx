@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { BsPlayFill } from "react-icons/bs";
 import FavouriteButton from "./FavouriteButton";
 import { useRouter } from "next/router";
@@ -7,7 +7,7 @@ import { BiChevronDown } from "react-icons/bi";
 interface MovieCardProps {
   data: Record<string, any>;
 }
-const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+const MovieCard: FC<MovieCardProps> = ({ data }) => {
   const router = useRouter();
   const { openModal } = userInfoModal();
   return (

@@ -50,7 +50,7 @@ const Auth = () => {
       </Head>
       <div
         className="
-  relative h-full w-full bg-[url(/Images/Hero.png)] bg-no-repeat bg-center bg-cover"
+  relative h-full w-full bg-[url(/Images/Hero.jpg)] bg-no-repeat bg-center bg-cover"
       >
         <div className="bg-black  w-full h-full lg:bg-opacity-50">
           <nav className="px-12 py-5">

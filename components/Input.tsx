@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 interface inputProps {
   id: string;
   onChange: any;
@@ -7,7 +7,7 @@ interface inputProps {
   type: string;
 }
 
-const Input: React.FC<inputProps> = ({ id, onChange, value, label, type }) => {
+const Input: FC<inputProps> = ({ id, onChange, value, label, type }) => {
   return (
     <div className="relative">
       <input

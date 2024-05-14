@@ -1,5 +1,5 @@
 //install lodash
-import React from "react";
+import { FC } from "react";
 import { isEmpty } from "lodash";
 import MovieCard from "./MovieCard";
 interface MovieListProps {
@@ -7,7 +7,7 @@ interface MovieListProps {
   title: string;
 }
 
-const MovieList: React.FC<MovieListProps> = ({ data, title }) => {
+const MovieList: FC<MovieListProps> = ({ data, title }) => {
   if (isEmpty(data)) {
     //so i dont render an empty div
     return null;

@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 interface MobileMenuProps {
   visible?: boolean;
 }
-const MobileMenu: React.FC<MobileMenuProps> = ({ visible }) => {
+const MobileMenu: FC<MobileMenuProps> = ({ visible }) => {
   if (!visible) {
     return null;
   }
