@@ -45,8 +45,8 @@ const Auth = () => {
   return (
     <>
       <Head>
-        <title>Silverflix&#xb7;Auth</title>
-        <link rel="icon" href="/Images/Favicon.jpeg" />
+        <title>Silverflix &#xb7; Auth</title>
+       
       </Head>
       <div
         className="
