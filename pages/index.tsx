@@ -32,7 +32,7 @@ export default function Home() {
     <>
       <Head>
         <title>Silverflix&#xb7;Home</title>
-<meta name="google-site-verification" content="SUROMljiAxs03qhjkCdpiYyyA-YU9VYxKDJj9cazuLo" />
+        <meta name="google-site-verification" content="SUROMljiAxs03qhjkCdpiYyyA-YU9VYxKDJj9cazuLo" />
         <meta name="description" content="Silverflix Homepage" />
         <link rel="icon" href="/Images/Favicon.jpeg" />
       </Head>
